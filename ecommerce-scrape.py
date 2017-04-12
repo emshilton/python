@@ -102,7 +102,7 @@ def store_product_info(soup, id, name, details, rating, store, price, discount, 
 
 
 def store_comment_info(id, review_rating, review_title, review_details):
-    cnx = mysql.connector.connect(user='root', database='ecommerce_products', password="tiSPARTA3721")
+    cnx = mysql.connector.connect(user='root', database='ecommerce_products', password="mypassword")
     cursor = cnx.cursor()
     add_review = ("INSERT INTO comments"
                    "(product_id, comment_rating, title, details)"
@@ -128,7 +128,4 @@ if __name__ == "__main__":
         cat_url = main_url + '/shop-' + category + '/?page='
         get_product_links_from_categories(cat_url, main_url, 2)
 
-# reasons for error: mysql.connector.errors.DatabaseError: 1366 (HY000): Incorrect string value: '\xE2\x9D\xA4'
-#   other language, eg. chinese
-#   emojis eg. ❤
-#   unknown
+
