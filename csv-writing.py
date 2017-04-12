@@ -72,8 +72,8 @@ def store_product_info(soup, id, name, details, rating, store, price, discount, 
 	with open('data-scrape.csv', 'a') as csvfile:
 		spamwriter = csv.writer(csvfile, quotechar='|', quoting=csv.QUOTE_MINIMAL)
 		try:	
-			spamwriter.writerow([name, details])
-			print name, ' + ', details
+			spamwriter.writerow([discount])
+			print discount
 		except:
 			print 'Found an error' 
 			
