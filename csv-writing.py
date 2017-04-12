@@ -72,8 +72,8 @@ def store_product_info(soup, id, name, details, rating, store, price, discount, 
 	with open('data-scrape.csv', 'a') as csvfile:
 		spamwriter = csv.writer(csvfile, quotechar='|', quoting=csv.QUOTE_MINIMAL)
 		try:	
-			spamwriter.writerow([discount])
-			print discount
+			spamwriter.writerow([name])
+			print name
 		except:
 			print 'Found an error' 
 			
@@ -81,7 +81,7 @@ def store_product_info(soup, id, name, details, rating, store, price, discount, 
 
 if __name__ == "__main__":
     fd = open('data-scrape.csv', 'wb')
-    fd.write( 'Name, Decription')
+    fd.write( 'Name,')
     fd.close()
     main_url = 'http://www.lazada.sg'
     categories = ['computers-laptops', 'cameras', 'consumer-electronics',
